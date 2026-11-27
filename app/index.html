@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealOrDud — real Black Friday deals, checked this morning</title>
+<meta name="description" content="A Black Friday deal finder that grades every deal: record low, real deal, fair cut, thin cut — or a percentage measured against a price that never existed.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="mast-top">
+      <span class="kicker">BLACK FRIDAY · FRIDAY 27 NOVEMBER 2026</span>
+      <span class="checked-stamp" id="checked-stamp"></span>
+    </div>
+    <h1 class="logo">Deal<em>or</em>Dud<span class="q">?</span></h1>
+    <p class="tagline">Real Black Friday deals, found and price-checked this morning — every one graded:
+      <b>record low</b>, <b>real deal</b>, <b>fair cut</b>, <b>thin cut</b>, or a percentage measured against a price that never existed.</p>
+    <div class="stats" id="stats"></div>
+    <nav class="mainnav">
+      <a href="#/" data-nav="home">The deals</a>
+      <a href="#/mirage" data-nav="mirage">Mirage watch</a>
+      <a href="#/method" data-nav="method">How we check</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="view-home">
+    <div class="section-head">
+      <h2>Today’s record lows</h2>
+      <p>The deepest verified cuts of the morning — prices that have never been lower.</p>
+    </div>
+    <div class="spotlight" id="spotlight"></div>
+
+    <div class="section-head">
+      <h2>Find your deal</h2>
+      <p id="result-count"></p>
+    </div>
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Search products, brands, stores…" aria-label="Search deals">
+      <div class="chips" id="cat-chips"></div>
+      <div class="selects">
+        <label>Store <select id="f-store"></select></label>
+        <label>Discount <select id="f-disc">
+          <option value="0">Any discount</option>
+          <option value="25">25% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select></label>
+        <label>Verdict <select id="f-verdict">
+          <option value="">All verdicts</option>
+          <option value="record">Record lows only</option>
+          <option value="strong">Real deals &amp; better</option>
+          <option value="mirage">Mirage watch</option>
+        </select></label>
+        <label>Sort <select id="f-sort">
+          <option value="pct">Biggest % off</option>
+          <option value="save">Biggest $ saving</option>
+          <option value="price">Lowest price</option>
+          <option value="verdict">Best verdict</option>
+        </select></label>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No deal matches that — loosen a filter or clear the search.</p>
+  </section>
+
+  <section id="view-deal" hidden></section>
+
+  <section id="view-mirage" hidden>
+    <div class="section-head">
+      <h2>Mirage watch</h2>
+      <p>Discounts measured against a “comparable value” or a list price the product may never have sold at.
+         The deals can still be good — but judge the dollar price, never the percentage.</p>
+    </div>
+    <div class="grid" id="mirage-grid"></div>
+    <div class="note-box">
+      <h3>How a mirage works</h3>
+      <p>Some stores print a <i>comparable value</i> next to the sale price: a reference figure for a similar
+         product, not a record of this one selling at that price. A “52% off” banner built on it is arithmetic,
+         not evidence. Our rule on this page: a percentage only counts when the “was” price is a price the
+         product actually sells at — its list price or its usual street price, as the named source showed it.</p>
+    </div>
+  </section>
+
+  <section id="view-method" hidden>
+    <div class="section-head">
+      <h2>How we check</h2>
+      <p>Every deal on this page passed the same four steps this morning.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Find.</b> Our agent swept the retailers’ own Black Friday releases and the established deals desks before dawn on Black Friday.</li>
+      <li><b>Read the price where it lives.</b> Each price was read at the store or in a deals source that names the store — never from a screenshot, a forum post, or another aggregator’s summary of a summary. The source is named on every card.</li>
+      <li><b>Grade it honestly.</b> The verdict compares the sale price with what the product usually sells for and what it has cost before: a record low, a real deal, a fair cut, a thin cut — or a mirage, when the percentage is built on a reference value.</li>
+      <li><b>Stamp the time.</b> Black Friday prices move by the hour, so every card carries the window in which its price was checked: <span id="method-checked"></span>. If a price has moved since, the store link shows today’s number.</li>
+    </ol>
+    <div class="note-box">
+      <h3>What we left out</h3>
+      <p>Anything we could not verify: deals whose “was” price no source would show, gift-card bundles dressed up as price cuts, and prices reported by only one unverifiable post. A shorter list of real deals beats a long list of maybes.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>DealOrDud</b> — built for Black Friday, Friday 27 November 2026. Prices checked <span id="foot-checked"></span> and can change or sell out at any time; the price at the store is the one that counts. Store links open the store’s own search for the exact product. Not affiliated with any retailer.</p>
+  </div>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
